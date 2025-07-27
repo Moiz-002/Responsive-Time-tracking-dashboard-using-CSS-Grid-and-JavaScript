@@ -241,7 +241,7 @@ picture > img {
 
   .profile-card-with-toggle-menu {
     grid-area: profile-toggle;
-    width: 220px;
+    width: 13.75rem;
   }
 
   .cards {
@@ -273,12 +273,12 @@ picture > img {
   }
 
   .card {
-    width: 220px;
-    height: 220px;
+    width: 13.75rem;
+    height: 13.75rem;
   }
 
   .card-details {
-    height: 200px;
+    height: 12.5rem;
   }
 
   .card-hours {

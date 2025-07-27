@@ -1,8 +1,6 @@
 const daily_button = document.querySelector(".daily");
 const weekly_button = document.querySelector(".weekly");
 const monthly_button = document.querySelector(".monthly");
-const card_hours = document.querySelector(".card-hours");
-const card_previous = document.querySelector(".card-previous");
 let data;
 
 fetch("./data.json")
