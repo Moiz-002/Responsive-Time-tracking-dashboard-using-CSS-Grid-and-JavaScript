@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+:root {
+  --purple-600: hsl(246, 80%, 60%);
+  --orange-300-work: hsl(15, 100%, 70%);
+  --blue-300-play: hsl(195, 74%, 62%);
+  --pink-400-study: hsl(348, 100%, 68%);
+  --green-400-exercise: hsl(145, 58%, 55%);
+  --purple-700-social: hsl(264, 64%, 52%);
+  --yellow-300-self-care: hsl(43, 84%, 65%);
+  --navy-950: hsl(226, 43%, 10%);
+  --navy-900: hsl(235, 46%, 20%);
+  --purple-500: hsl(235, 45%, 61%);
+  --navy-200: hsl(236, 100%, 87%);
+  --fw-regular: 300;
+  --fw-medium: 400;
+  --fw-bold: 500;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--navy-950);
+  padding: 2rem;
+}
+
+main {
+  margin: auto;
+  width: 100%;
+  max-width: 475px;
+}
+
+.dashboard {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.25rem;
+  color: white;
+  line-height: 1.5;
+  font-weight: var(--fw-regular);
+}
+
+h2,
+p,
+button {
+  font-size: 1.125rem;
+  color: white;
+  line-height: 1.5;
+}
+
+picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+picture > img {
+  max-width: 100%;
+  border-radius: 50%;
+  border: 0.2rem solid white;
+}
+
+.profile-card-with-toggle-menu {
+  background-color: var(--navy-900);
+  border-radius: 1.125rem;
+  overflow: hidden;
+}
+
+.profile-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--purple-600);
+  gap: 1rem;
+  padding: 1.2em;
+  border-radius: 1.125rem;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.report-headline {
+  font-weight: var(--fw-regular);
+  font-size: 0.75rem;
+  color: var(--navy-200);
+}
+
+.user-name {
+  font-size: 1.25rem;
+  color: white;
+}
+
+.toggle-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2em;
+}
+
+.toggle-menu > button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--purple-500);
+}
+
+.toggle-menu > button:hover {
+  color: white;
+}
+
+.toggle-menu .active {
+  color: white;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  line-height: 1.2;
+  gap: 0.1rem;
+}
+
+.cards {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  border-radius: 1.125rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.card-details {
+  background-color: var(--navy-900);
+  border-radius: 1.125rem;
+  padding: 1.2em;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-details:hover {
+  background-color: #34397b;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-hours {
+  font-size: 1.875rem;
+  font-weight: var(--fw-regular);
+}
+
+.card-previous {
+  font-size: 0.875rem;
+  color: var(--navy-200);
+}
+
+.card.work {
+  background-color: var(--orange-300-work);
+  background-image: url("./images/icon-work.svg");
+}
+
+.card.play {
+  background-color: var(--blue-300-play);
+  background-image: url("./images/icon-play.svg");
+}
+
+.card.study {
+  background-color: var(--pink-400-study);
+  background-image: url("./images/icon-study.svg");
+}
+
+.card.exercise {
+  background-color: var(--green-400-exercise);
+  background-image: url("./images/icon-exercise.svg");
+}
+
+.card.social {
+  background-color: var(--purple-700-social);
+  background-image: url("./images/icon-social.svg");
+}
+
+.card.self-care {
+  background-color: var(--yellow-300-self-care);
+  background-image: url("./images/icon-self-care.svg");
+}
+
+.card.work,
+.card.play,
+.card.study,
+.card.exercise,
+.card.social,
+.card.self-care {
+  background-repeat: no-repeat;
+  background-position: right 1rem top -0.7rem;
+  padding-top: 2.4rem;
+}
+
+@media screen and (min-width: 1080px) {
+  .dashboard {
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "profile-toggle card-1 card-2 card-3"
+      "profile-toggle card-4 card-5 card-6";
+    gap: 1.5rem;
+  }
+
+  .profile-card-with-toggle-menu {
+    grid-area: profile-toggle;
+    width: 220px;
+  }
+
+  .cards {
+    display: contents;
+  }
+
+  .card.work {
+    grid-area: card-1;
+  }
+
+  .card.play {
+    grid-area: card-2;
+  }
+
+  .card.study {
+    grid-area: card-3;
+  }
+
+  .card.exercise {
+    grid-area: card-4;
+  }
+
+  .card.social {
+    grid-area: card-5;
+  }
+
+  .card.self-care {
+    grid-area: card-6;
+  }
+
+  .card {
+    width: 220px;
+    height: 220px;
+  }
+
+  .card-details {
+    height: 200px;
+  }
+
+  .card-hours {
+    font-size: 3.175rem;
+  }
+
+  .profile-card {
+    height: 20rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2em;
+    gap: 2em;
+  }
+
+  .toggle-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1.2em 1.5em;
+  }
+
+  .toggle-menu > button {
+    padding: 0.2em;
+  }
+
+  .user-name {
+    font-size: 2.325rem;
+  }
+}
