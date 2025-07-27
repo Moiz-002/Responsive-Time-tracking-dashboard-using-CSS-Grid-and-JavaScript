@@ -39,7 +39,7 @@ body {
 main {
   margin: auto;
   width: 100%;
-  max-width: 475px;
+  max-width: 29.6875rem;
 }
 
 .dashboard {
@@ -228,7 +228,7 @@ picture > img {
   padding-top: 2.4rem;
 }
 
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 67.5rem) {
   .dashboard {
     display: grid;
     place-content: center;
